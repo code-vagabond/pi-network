@@ -14,11 +14,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -81,6 +79,12 @@ public class Post {
         }
     }
     
+    /**
+     * delete post as well as votes for the post
+     * @param sessionid 
+     * @param id postID
+     * @throws SQLException 
+     */
     public void deletePost (String sessionid, int id) throws SQLException{
         String user = getUsername(sessionid);
         Statement del = server.user.conn.createStatement();
@@ -89,10 +93,10 @@ public class Post {
     }
     
     /**
-     * getPost fetchs posts which are allowed to be seen by current user
+     * Internal, getPost fetches posts which are allowed to be seen by current user
      * @param sessionid
-     * @return returns an array list containing postID, username of submitter, title of 
-     * the post, post content and submit time as strings
+     * @return returns an array list containing postID, submitter, title of 
+     * the post, post content and submit time of all viewable post in one string
      * @throws SQLException 
      */
     public ArrayList <String> getPosts (String sessionid) throws SQLException {
@@ -122,7 +126,18 @@ public class Post {
         return a;
     }
     
-    
+    /**
+     * Get all posts which current user is allowed to view in displayable format
+     * @param sessionid
+     * @return a DefaultListModel with posts, each in an string array containing :
+     *  Index 0: title / topic 
+     *  Index 1: submitter / author 
+     *  Index 2: submit time / date
+     *  Index 3: vote count / rating count
+     *  Index 4: content 
+     *  Index 5: id 
+     * @throws SQLException 
+     */
     public DefaultListModel <String[]> viewPosts (String sessionid) throws SQLException {
         DefaultListModel <String[]> list = new DefaultListModel ();
         ArrayList <String> a = getPosts(sessionid);
@@ -135,9 +150,9 @@ public class Post {
     }
     
     /**
-     * 
+     * Internal, retrieves all posts by current user  
      * @param sessionid
-     * @return all post submitted by current user
+     * @return all post submitted by current user in ArrayList
      * @throws SQLException 
      */
     public ArrayList <String> getEditablePosts (String sessionid) throws SQLException {
@@ -158,6 +173,18 @@ public class Post {
         return a;            
     }
     
+    
+    /**
+     * Get all posts which is editable by current user in diplayable format
+     * @param sessionid
+     * @return Data retrieved from getEditablePosts in DefaultListModel <String[]>
+     * content of each string array : 
+     *  Index 0: title / topic 
+     *  Index 1: submit time / date
+     *  Index 2: content 
+     *  Index 3: postID 
+     * @throws SQLException 
+     */
     public DefaultListModel <String[]> viewEditablePosts (String sessionid) throws SQLException {
         DefaultListModel <String[]> list = new DefaultListModel ();
         ArrayList <String> a = getEditablePosts(sessionid);
@@ -170,7 +197,7 @@ public class Post {
     
         
     /**
-     * Used to get information from a post in post editing panel
+     * Used to get information from a single post in post editing panel
      * @param sessionid
      * @param postID
      * @return a post which the current user has clicked on to edit
@@ -206,7 +233,6 @@ public class Post {
      * @param postID ID of the post which is going to be edited
      * @param title up to date title
      * @param content up to date content
-     * @param pub up to date privacy setting (1 for public, 0 for private)
      * @throws SQLException 
      */
     public void editPost (String sessionid, int postID, String title, String content) throws SQLException {
@@ -215,6 +241,13 @@ public class Post {
                 "'where id = " +postID+" and submitter ='"+getUsername(sessionid)+"'");
     }
     
+    
+    /**
+     * Change the publicity setting for a post
+     * @param sessionid
+     * @param postID
+     * @param pub Integer, 1 for public, 0 for private 
+     */
     public void editPublicity (String sessionid, int postID, int pub) {
         String user = getUsername(sessionid);
         String epub = "update post set publicity = ? where id = ? and submitter = ?";
@@ -230,12 +263,13 @@ public class Post {
             JOptionPane.showMessageDialog(null, ex);
         }
     }
-        /**
-     * look up all post submitted by the inputted username that the current user
-     * is allowed to view
+    
+    /** 
+     * Internal function, looks up all post submitted by 
+     * the inputted username that the current user is allowed to view
      * @param sessionid
      * @param input inputted username
-     * @return an array list of posts with id, submitter, title, content and
+     * @return an array list of posts with id, submitter, title, content adn
      * submit time as strings
      * @throws SQLException 
      */
@@ -254,18 +288,43 @@ public class Post {
             String tit = rs.getString ("title");
             String con = rs.getString ("content");
             String date = rs.getString("submitTime");
-            a.add(id);
+            String vote = rs.getString("vote");
+            a.add(tit);
             a.add (sub);
-            a.add (tit);
-            a.add (con);
             a.add (date);
+            a.add (vote);
+            a.add (con);
+            a.add(id);
         }
         return a;           
     }
     
+    /**
+     * Search post by submitter, gets posts from inputted submitter which the user
+     * is allowed to view in a displayable format
+     * @param sessionid
+     * @param bySubmitter 
+     * @return a DefaultListModel with posts, each in an string array containing :
+     *  Index 0: title / topic 
+     *  Index 1: submitter / author 
+     *  Index 2: submit time / date
+     *  Index 3: vote count / rating count
+     *  Index 4: content 
+     *  Index 5: id 
+     * @throws SQLException 
+     */
+    public DefaultListModel <String[]> viewSearchPostResult (String sessionid, String bySubmitter) throws SQLException {
+        DefaultListModel <String[]> list = new DefaultListModel ();
+        ArrayList <String> a = searchPost (sessionid, bySubmitter);
+        for (int i=0 ; i < a.size()-3; i = i + 4 ) {
+            String [] row = {a.get(i), a.get(i+1), a.get(i+2), a.get(i+3), a.get(i+4), a.get(i+5)};
+            list.addElement(row);
+        }
+        return list;
+    }    
     
     /**
-     * 
+     *  
      * @param postID postID as String
      * @return a String containing vote count for given postID
      * @throws SQLException 

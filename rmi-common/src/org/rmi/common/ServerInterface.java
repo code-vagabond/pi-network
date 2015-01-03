@@ -55,14 +55,12 @@ public interface ServerInterface extends Remote {
     //Post
     public void submitPost (String sessionid, String tit, String con, int pub) throws SQLException, RemoteException;
     public void deletePost (String sessionid, int id) throws SQLException, RemoteException;
-    public ArrayList <String> getPosts (String sessionid) throws SQLException, RemoteException;
     public DefaultListModel <String[]> viewPosts (String sessionid) throws SQLException, RemoteException;
-    public ArrayList <String> getEditablePosts (String sessionid) throws SQLException, RemoteException;
     public DefaultListModel <String[]> viewEditablePosts (String sessionid) throws SQLException, RemoteException;
     public ArrayList<String> getSelectedPost (String sessionid, int postID) throws SQLException, RemoteException;
     public void editPost (String sessionid, int postID, String title, String content) throws SQLException, RemoteException;
     public void editPublicity (String sessionid, int postID, int pub) throws SQLException, RemoteException;
-    public ArrayList <String> searchPost (String sessionid, String submitter) throws SQLException, RemoteException;
+    public DefaultListModel <String[]> viewSearchPostResult (String sessionid, String bySubmitter) throws SQLException, RemoteException;
     public String getVoteCount (String postID) throws SQLException, RemoteException;
     public void votePost (String sessionid, int postID) throws SQLException, RemoteException;
     public void unvotePost (String sessionid, int postID) throws SQLException, RemoteException;

@@ -372,16 +372,8 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
         post.deletePost(sessionid, id);
     }
     
-    public ArrayList <String> getPosts (String sessionid) throws SQLException {
-        return  post.getPosts(sessionid);
-    }
-    
     public DefaultListModel <String[]> viewPosts (String sessionid) throws SQLException {
         return post.viewPosts(sessionid);
-    }
-    
-    public ArrayList <String> getEditablePosts (String sessionid) throws SQLException {
-        return post.getEditablePosts(sessionid);
     }
     
     public DefaultListModel <String[]> viewEditablePosts (String sessionid) throws SQLException {
@@ -400,10 +392,10 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
         post.editPublicity (sessionid, postID, pub);
     }
     
-    public ArrayList <String> searchPost (String sessionid, String submitter) throws SQLException {
-        return post.searchPost(sessionid, submitter);
+    public DefaultListModel <String[]> viewSearchPostResult (String sessionid, String bySubmitter) throws SQLException {
+        return post.viewSearchPostResult (sessionid, bySubmitter);
     }
-    
+
     public String getVoteCount (String postID) throws SQLException {
         return post.getVoteCount(postID);
     }
