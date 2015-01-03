@@ -126,5 +126,30 @@ public class Friendship {
         return rowCount!= 0;
     }
     
-   
+    /**
+     * Delete User from friendship when User is deleted
+     * @param sessionID 
+     */
+    public void leaveFriendship (String sessionID ) {
+        String user = server.user.getUsername(sessionID);
+
+        String sqlStatement = "delete from friendship where friendFrom = ? or friendTo = ?";
+        try {
+            server.user.conn.setAutoCommit(false);
+            PreparedStatement pst = server.user.conn.prepareStatement(sqlStatement);
+            pst.setString(1,user        );  // friendFrom
+            pst.setString(2,user        );  // friendTo
+            pst.execute();
+            server.user.conn.commit();
+        }
+        catch (SQLException e)
+        {
+            try {
+               server.user.conn.rollback();
+               
+            }catch(SQLException se2){
+              se2.printStackTrace();   
+            }
+        }
+    }
 }

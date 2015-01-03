@@ -324,7 +324,7 @@ public class Post {
     }    
     
     /**
-     *  
+     * Internal function to get vote count as String
      * @param postID postID as String
      * @return a String containing vote count for given postID
      * @throws SQLException 
@@ -388,7 +388,7 @@ public class Post {
     
     
     /**
-     * isVoted checks whether current user already given a vote to given post
+     * isVoted checks whether a post has been voted by user
      * @param sessionid
      * @param postID
      * @return true if a vote already exists, else false
@@ -403,6 +403,15 @@ public class Post {
         rs.last();
         int rowCount = rs.getRow();
         return rowCount!= 0;            
+    }
+    
+    public void deletePostsByUser (String sessionid) throws SQLException {
+        server.user.conn.setAutoCommit(false);
+        Statement del = server.user.conn.createStatement();
+        del.executeUpdate("set SQL_SAFE_UPDATES = 0");
+        del.executeUpdate("delete from vote where postID in (select id from post where submitter ='"+getUsername(sessionid)+"')");
+        del.executeUpdate("delete from post where submitter ='"+getUsername(sessionid)+"'");
+        server.user.conn.commit();
     }
     
     

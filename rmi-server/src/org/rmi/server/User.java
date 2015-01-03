@@ -220,6 +220,15 @@ public class User/** extends Server**/ {
                 for (int i =0; i < ob.length;i++) {
                     server.group.leaveGroup(sessionID, ob[i].toString());
                 }
+                // new Code start -------------------------------------------
+                // delete users friendchip connection from table friendchip
+                server.friendship.leaveFriendship(sessionID);
+                // delete all news from table acceptor when user is deleted
+                server.news.deleteUsersNews(sessionID);
+                // delete all posts and votes from user
+                server.post.deletePostsByUser(sessionID);
+                // new Code end --------------------------------------------
+                
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null,"Error:"+ex.getMessage());
     

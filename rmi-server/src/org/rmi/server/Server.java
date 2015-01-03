@@ -195,6 +195,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
             JOptionPane.showMessageDialog(null, "Session timed out, please login again");
         }
         else {  
+            frame.setlogText("User: " + us + " deleted" );
             user.deleteUser(sessionID);
         }
     }
@@ -322,6 +323,9 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
         return group.listMyGroups(sessionID);
     }
     
+    
+    
+    
     // Call the News methode
     @Override
     public boolean sendNews (String sessionID, String toUser, String message, String newsTitle ){
@@ -361,6 +365,8 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
     }
     
     
+
+    
     
     
     //Post
@@ -396,17 +402,16 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
         return post.viewSearchPostResult (sessionid, bySubmitter);
     }
 
-    public String getVoteCount (String postID) throws SQLException {
-        return post.getVoteCount(postID);
-    }
-    
-
     public void votePost (String sessionid, int postID) throws SQLException {
         post.votePost(sessionid, postID);
     }
     
     public void unvotePost (String sessionid, int postID) throws SQLException {
         post.unvotePost(sessionid, postID);
+    }
+    
+    public boolean isVoted (String sessionid, int postID) throws SQLException {
+        return post.isVoted(sessionid, postID);
     }
 } 
     

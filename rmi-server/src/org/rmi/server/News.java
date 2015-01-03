@@ -55,8 +55,21 @@ public class News {
             e.printStackTrace();     
         }
     }     
+
     
-    
+    public void testRoutineDeleteUsersNews()
+    {
+        try {
+            String sID = server.verifyLogin("werner", "12984859847925339246461645049445516606679622626466");
+            String user = server.user.getUsername(sID);
+            deleteUsersNews (sID);
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();     
+        }
+    } 
+
     
     
     public void testRoutineSendNews()
@@ -500,9 +513,12 @@ public class News {
     } 
 
 
-
-
-
+    /**
+     * 
+     * @param sessionID
+     * @param newsNumber
+     * @return 
+     */
     public boolean deleteNews (String sessionID, int newsNumber )
     {
         String user = server.user.getUsername(sessionID);    
@@ -546,10 +562,49 @@ public class News {
               se2.printStackTrace();   
             }
         }
-    
-            
-            
         return false;
     }
-    
+    /**
+     * Delete Users News when User is deleted
+     * @parrs sessionID
+     * @return 
+     */
+    public boolean deleteUsersNews (String sessionID  )
+    {
+        String user = server.user.getUsername(sessionID);
+        String sqlStatement;
+        
+        try 
+        {   
+            // 1. Schritt
+            server.user.conn.setAutoCommit(false);
+            
+            sqlStatement = "select newsNumber from acceptor where newsTo = ?";
+            PreparedStatement pst =server.user.conn.prepareStatement(sqlStatement);
+            pst.setString(1, user );        
+            
+            ResultSet rs = pst.executeQuery();
+            
+            while ( rs.next() )
+            {
+                int newsNumber       = rs.getInt("newsNumber");
+                deleteNews (sessionID, newsNumber );
+            
+            }
+           
+            server.user.conn.commit();
+            
+        }
+        catch (SQLException e)
+        {
+            try {
+               server.user.conn.rollback();
+               
+            }catch(SQLException se2){
+              se2.printStackTrace();   
+            }
+        }
+        return false;
+    }
+   
 }
