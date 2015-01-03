@@ -5,7 +5,6 @@ import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
-import javax.swing.JTable;
 
 public interface ServerInterface extends Remote {
     public int countOnlineUser () throws RemoteException;
@@ -63,7 +62,7 @@ public interface ServerInterface extends Remote {
     public ArrayList<String> getSelectedPost (String sessionid, int postID) throws SQLException, RemoteException;
     public void editPost (String sessionid, int postID, String title, String content) throws SQLException, RemoteException;
     public void editPublicity (String sessionid, int postID, int pub) throws SQLException, RemoteException;
-    public ArrayList <String> searchPost (String sessionid, String input) throws SQLException, RemoteException;
+    public ArrayList <String> searchPost (String sessionid, String submitter) throws SQLException, RemoteException;
     public String getVoteCount (String postID) throws SQLException, RemoteException;
     public void votePost (String sessionid, int postID) throws SQLException, RemoteException;
     public void unvotePost (String sessionid, int postID) throws SQLException, RemoteException;

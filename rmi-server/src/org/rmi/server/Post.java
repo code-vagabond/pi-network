@@ -188,11 +188,13 @@ public class Post {
             String tit = rs.getString ("title");
             String con = rs.getString ("content");
             String date = rs.getString("submitTime");
+            String pub = rs.getString("publicity");
             a.add(id);
             a.add (sub);
             a.add (tit);
             a.add (con);
             a.add (date);
+            a.add (pub);
         }
         return a;          
     }
@@ -214,9 +216,16 @@ public class Post {
     }
     
     public void editPublicity (String sessionid, int postID, int pub) {
+        String user = getUsername(sessionid);
+        String epub = "update post set publicity = ? where id = ? and submitter = ?";
+        
+        
         try {
-            Statement edit = server.user.conn.createStatement();
-            edit.executeUpdate("update post set publicity ="+pub+"where id ="+postID+" and submitter ='"+getUsername(sessionid)+"'");
+            PreparedStatement epubex = server.user.conn.prepareStatement(epub);
+            epubex.setInt(1, pub);
+            epubex.setInt(2, postID);
+            epubex.setString(3, user);
+            epubex.executeUpdate();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
@@ -230,14 +239,14 @@ public class Post {
      * submit time as strings
      * @throws SQLException 
      */
-    public ArrayList <String> searchPost (String sessionid, String input) throws SQLException {
+    public ArrayList <String> searchPost (String sessionid, String submitter) throws SQLException {
         String user = getUsername(sessionid);
         Statement search = server.user.conn.createStatement();
         ResultSet rs = search.executeQuery("select * from (select *  from post where submitter \n" +
 " = '"+user+"' or submitter in (select friendTo from friendship where friendFrom = '"+user+"' and publicity = 1) \n" +
 "or submitter in (select friendTo from friendship where friendFrom = '"+user+"' \n" +
 "and friendTo in (select friendFrom from friendship where friendTo = '"+user+"'))  and publicity = 0) "
-                + " as Alias where submitter like '"+input+"%'");      
+                + " as Alias where submitter like '"+submitter+"%'");      
         ArrayList <String> a = new ArrayList <String> ();
         while (rs.next()){
             String id = rs.getString ("id");

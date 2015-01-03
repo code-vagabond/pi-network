@@ -400,8 +400,8 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
         post.editPublicity (sessionid, postID, pub);
     }
     
-    public ArrayList <String> searchPost (String sessionid, String input) throws SQLException {
-        return post.searchPost(sessionid, input);
+    public ArrayList <String> searchPost (String sessionid, String submitter) throws SQLException {
+        return post.searchPost(sessionid, submitter);
     }
     
     public String getVoteCount (String postID) throws SQLException {
