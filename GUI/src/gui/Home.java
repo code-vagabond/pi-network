@@ -77,6 +77,7 @@ org.rmi.client.User current;
         writePostsPanel.setVisible(false);
         editPostsPanel.setVisible(false);
         topFiveMessagesFillValues();
+        topFivePostFillValues();
         repaint();
     }
 
@@ -102,6 +103,7 @@ org.rmi.client.User current;
         readMessagesNavigationButtons = new javax.swing.ButtonGroup();
         postsButtons = new javax.swing.ButtonGroup();
         writePostsNavigationButtons = new javax.swing.ButtonGroup();
+        editPostsButtonGroup = new javax.swing.ButtonGroup();
         homeButton = new javax.swing.JToggleButton();
         myProfileButton = new javax.swing.JToggleButton();
         groupsButton = new javax.swing.JToggleButton();
@@ -110,6 +112,59 @@ org.rmi.client.User current;
         postsButton = new javax.swing.JToggleButton();
         statsButton = new javax.swing.JToggleButton();
         logOutButton = new javax.swing.JToggleButton();
+        postsPanel = new javax.swing.JPanel();
+        writePostsButton = new javax.swing.JToggleButton();
+        readPostsButton = new javax.swing.JToggleButton();
+        editPostsButton = new javax.swing.JToggleButton();
+        writePostsPanel = new javax.swing.JPanel();
+        postsWritePostsTitleLabel = new javax.swing.JLabel();
+        postWritePostsPostPrivateRadioButton = new javax.swing.JRadioButton();
+        postWritePostsPostPublicRadioButton = new javax.swing.JRadioButton();
+        postsWritePostsTopicLabel = new javax.swing.JLabel();
+        postsWritePostsTopic = new javax.swing.JTextField();
+        postsWritePostsTextLabel = new javax.swing.JLabel();
+        postsWritePostsTextScrollPane = new javax.swing.JScrollPane();
+        postsWritePostsText = new javax.swing.JTextArea();
+        postsWritePostsSendPostButton = new javax.swing.JButton();
+        postWritePostsTopicCheck = new javax.swing.JLabel();
+        postWritePostsTextCheck = new javax.swing.JLabel();
+        readPostsPanel = new javax.swing.JPanel();
+        postsReadPostsVoteButton = new javax.swing.JButton();
+        postsReadPostsUsernameLabel = new javax.swing.JLabel();
+        postsReadPostsUsername = new javax.swing.JTextField();
+        postsReadPostsSearchUsernameButton = new javax.swing.JButton();
+        postsReadPostsDateLabel = new javax.swing.JLabel();
+        postsReadPostsAutorLabel = new javax.swing.JLabel();
+        postsReadPostsTopicLabel = new javax.swing.JLabel();
+        postsReadPostsTextLabel = new javax.swing.JLabel();
+        postsReadPostsDate = new javax.swing.JLabel();
+        postsReadPostsAutor = new javax.swing.JLabel();
+        postsReadPostsTopic = new javax.swing.JLabel();
+        postsReadPostsTextLabelScrollPane = new javax.swing.JScrollPane();
+        postsReadPostsText = new javax.swing.JTextArea();
+        postsReadPostsAllPostsScrollPane = new javax.swing.JScrollPane();
+        postsReadPostsAllPosts = new javax.swing.JTable(){
+            public boolean isCellEditable(int x, int y){
+                return false;
+            }
+        };
+        editPostsPanel = new javax.swing.JPanel();
+        postsEditPostsMyPostsScrollPane = new javax.swing.JScrollPane();
+        postsEditPostsMyPosts = new javax.swing.JTable();
+        postsEditPostsDateLabel = new javax.swing.JLabel();
+        postsEditPostsTopicLabel = new javax.swing.JLabel();
+        postsEditPostsTextLabel = new javax.swing.JLabel();
+        postsEditPostsDate = new javax.swing.JLabel();
+        postsEditPostsTopic = new javax.swing.JTextField();
+        postsEditPostsTextScrollPane = new javax.swing.JScrollPane();
+        postsEditPostsText = new javax.swing.JTextArea();
+        postsEditPostsDeletePostButton = new javax.swing.JButton();
+        postsEditPostsSendPostButton = new javax.swing.JButton();
+        postsEditPostsTextCheck = new javax.swing.JLabel();
+        postsEditPostsTopicCheck = new javax.swing.JLabel();
+        postEditPostsPrivatePostRadioButton = new javax.swing.JRadioButton();
+        postsEditPostsDateLabel1 = new javax.swing.JLabel();
+        postEditPostsPubliPostRadioButton = new javax.swing.JRadioButton();
         homePanel = new javax.swing.JPanel();
         userLogedInLabel = new javax.swing.JLabel();
         welcomeLabel = new javax.swing.JLabel();
@@ -167,8 +222,60 @@ org.rmi.client.User current;
         homeMessageStatus5 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         homeMessageText5 = new javax.swing.JTextArea();
+        homeMessageAutorLabel6 = new javax.swing.JLabel();
+        homeMessageTopicLabel6 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
+        homePostAutorLabel1 = new javax.swing.JLabel();
+        homePostAutor1 = new javax.swing.JLabel();
+        homePostTopicLabel1 = new javax.swing.JLabel();
+        homePostTopic1 = new javax.swing.JLabel();
+        homePostVotesLabel1 = new javax.swing.JLabel();
+        homePostVotes1 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        homePostText1 = new javax.swing.JTextArea();
+        homePostDateLabel1 = new javax.swing.JLabel();
+        homePostDate1 = new javax.swing.JLabel();
+        homePostAutorLabel2 = new javax.swing.JLabel();
+        homePostAutor2 = new javax.swing.JLabel();
+        homePostTopicLabel2 = new javax.swing.JLabel();
+        homePostTopic2 = new javax.swing.JLabel();
+        homePostVotesLabel2 = new javax.swing.JLabel();
+        homePostVotes2 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        homePostText2 = new javax.swing.JTextArea();
+        homePostDateLabel2 = new javax.swing.JLabel();
+        homePostDate2 = new javax.swing.JLabel();
+        homePostAutorLabel3 = new javax.swing.JLabel();
+        homePostAutor3 = new javax.swing.JLabel();
+        homePostDateLabel3 = new javax.swing.JLabel();
+        homePostDate3 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        homePostText3 = new javax.swing.JTextArea();
+        homePostTopic3 = new javax.swing.JLabel();
+        homePostTopicLabel3 = new javax.swing.JLabel();
+        homePostVotesLabel3 = new javax.swing.JLabel();
+        homePostVotes3 = new javax.swing.JLabel();
+        homePostAutorLabel4 = new javax.swing.JLabel();
+        homePostAutor4 = new javax.swing.JLabel();
+        homePostDateLabel4 = new javax.swing.JLabel();
+        homePostDate4 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        homePostText4 = new javax.swing.JTextArea();
+        homePostTopic4 = new javax.swing.JLabel();
+        homePostTopicLabel4 = new javax.swing.JLabel();
+        homePostVotesLabel4 = new javax.swing.JLabel();
+        homePostVotes4 = new javax.swing.JLabel();
+        homePostAutorLabel5 = new javax.swing.JLabel();
+        homePostAutor5 = new javax.swing.JLabel();
+        homePostDateLabel5 = new javax.swing.JLabel();
+        homePostDate5 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        homePostText5 = new javax.swing.JTextArea();
+        homePostTopic5 = new javax.swing.JLabel();
+        homePostTopicLabel5 = new javax.swing.JLabel();
+        homePostVotesLabel5 = new javax.swing.JLabel();
+        homePostVotes5 = new javax.swing.JLabel();
         messagesPanel = new javax.swing.JPanel();
         messagesSendMessagesButton = new javax.swing.JToggleButton();
         messagesReadMessagesButton = new javax.swing.JToggleButton();
@@ -207,57 +314,6 @@ org.rmi.client.User current;
         messagesSendMessagesPotentialAdresseeScrollPane = new javax.swing.JScrollPane();
         messagesSendMessagesPotentialAdresseeList = new javax.swing.JList();
         messagesSendMessagesMessageTitleLabel = new javax.swing.JLabel();
-        postsPanel = new javax.swing.JPanel();
-        writePostsButton = new javax.swing.JToggleButton();
-        readPostsButton = new javax.swing.JToggleButton();
-        editPostsButton = new javax.swing.JToggleButton();
-        writePostsPanel = new javax.swing.JPanel();
-        postsWritePostsTitleLabel = new javax.swing.JLabel();
-        postWritePostsPostPrivateRadioButton = new javax.swing.JRadioButton();
-        postWritePostsPostPublicRadioButton = new javax.swing.JRadioButton();
-        postsWritePostsTopicLabel = new javax.swing.JLabel();
-        postsWritePostsTopic = new javax.swing.JTextField();
-        postsWritePostsTextLabel = new javax.swing.JLabel();
-        postsWritePostsTextScrollPane = new javax.swing.JScrollPane();
-        postsWritePostsText = new javax.swing.JTextArea();
-        postsWritePostsSendPostButton = new javax.swing.JButton();
-        postWritePostsTopicCheck = new javax.swing.JLabel();
-        postWritePostsTextCheck = new javax.swing.JLabel();
-        readPostsPanel = new javax.swing.JPanel();
-        postsReadPostsVoteButton = new javax.swing.JButton();
-        postsReadPostsUsernameLabel = new javax.swing.JLabel();
-        postsReadPostsUsername = new javax.swing.JTextField();
-        postsReadPostsSearchUsernameButton = new javax.swing.JButton();
-        postsReadPostsDateLabel = new javax.swing.JLabel();
-        postsReadPostsAutorLabel = new javax.swing.JLabel();
-        postsReadPostsTopicLabel = new javax.swing.JLabel();
-        postsReadPostsTextLabel = new javax.swing.JLabel();
-        postsReadPostsDate = new javax.swing.JLabel();
-        postsReadPostsAutor = new javax.swing.JLabel();
-        postsReadPostsTopic = new javax.swing.JLabel();
-        postsReadPostsTextLabelScrollPane = new javax.swing.JScrollPane();
-        postsReadPostsText = new javax.swing.JTextArea();
-        postsReadPostsAllPostsScrollPane = new javax.swing.JScrollPane();
-        postsReadPostsAllPosts = new javax.swing.JTable(){
-            public boolean isCellEditable(int x, int y){
-                return false;
-            }
-        };
-        editPostsPanel = new javax.swing.JPanel();
-        postsEditPostsMyPostsScrollPane = new javax.swing.JScrollPane();
-        postsEditPostsMyPosts = new javax.swing.JTable();
-        postsEditPostsDateLabel = new javax.swing.JLabel();
-        postsEditPostsTopicLabel = new javax.swing.JLabel();
-        postsEditPostsTextLabel = new javax.swing.JLabel();
-        postsEditPostsDate = new javax.swing.JLabel();
-        postsEditPostsTopic = new javax.swing.JTextField();
-        postsEditPostsTextScrollPane = new javax.swing.JScrollPane();
-        postsEditPostsText = new javax.swing.JTextArea();
-        postsEditPostsDeletePostButton = new javax.swing.JButton();
-        postsEditPostsSendPostButton = new javax.swing.JButton();
-        postsEditPostsTextCheck = new javax.swing.JLabel();
-        postsEditPostsTopicCheck = new javax.swing.JLabel();
-        background = new javax.swing.JLabel();
         usersPanel = new javax.swing.JPanel();
         usersFindFriendsButton = new javax.swing.JToggleButton();
         usersMyFriendsButton = new javax.swing.JToggleButton();
@@ -404,6 +460,7 @@ org.rmi.client.User current;
         statsUserStatsLabel = new javax.swing.JLabel();
         statsGroupStatsLabel = new javax.swing.JLabel();
         statsFriendshipStatsLabel = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
         defaultModelPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -507,6 +564,347 @@ org.rmi.client.User current;
         });
         getContentPane().add(logOutButton);
         logOutButton.setBounds(896, 0, 128, 30);
+
+        postsPanel.setOpaque(false);
+        postsPanel.setLayout(null);
+
+        postsButtons.add(writePostsButton);
+        writePostsButton.setFont(new java.awt.Font("Segoe UI Black", 0, 15)); // NOI18N
+        writePostsButton.setForeground(new java.awt.Color(0, 153, 153));
+        writePostsButton.setText("Schreiben");
+        writePostsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                writePostsButtonActionPerformed(evt);
+            }
+        });
+        postsPanel.add(writePostsButton);
+        writePostsButton.setBounds(512, 35, 128, 30);
+
+        postsButtons.add(readPostsButton);
+        readPostsButton.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
+        readPostsButton.setForeground(new java.awt.Color(0, 153, 153));
+        readPostsButton.setText("Lesen");
+        readPostsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                readPostsButtonActionPerformed(evt);
+            }
+        });
+        postsPanel.add(readPostsButton);
+        readPostsButton.setBounds(640, 35, 128, 30);
+
+        postsButtons.add(editPostsButton);
+        editPostsButton.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
+        editPostsButton.setForeground(new java.awt.Color(0, 153, 153));
+        editPostsButton.setText("Bearbeiten");
+        editPostsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editPostsButtonActionPerformed(evt);
+            }
+        });
+        postsPanel.add(editPostsButton);
+        editPostsButton.setBounds(768, 35, 128, 30);
+
+        writePostsPanel.setOpaque(false);
+        writePostsPanel.setLayout(null);
+
+        postsWritePostsTitleLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsWritePostsTitleLabel.setForeground(new java.awt.Color(0, 153, 153));
+        postsWritePostsTitleLabel.setText("Veröffentliche");
+        writePostsPanel.add(postsWritePostsTitleLabel);
+        postsWritePostsTitleLabel.setBounds(40, 100, 120, 25);
+
+        writePostsNavigationButtons.add(postWritePostsPostPrivateRadioButton);
+        postWritePostsPostPrivateRadioButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postWritePostsPostPrivateRadioButton.setForeground(new java.awt.Color(51, 255, 255));
+        postWritePostsPostPrivateRadioButton.setSelected(true);
+        postWritePostsPostPrivateRadioButton.setText("Privat");
+        postWritePostsPostPrivateRadioButton.setOpaque(false);
+        writePostsPanel.add(postWritePostsPostPrivateRadioButton);
+        postWritePostsPostPrivateRadioButton.setBounds(370, 100, 160, 27);
+
+        writePostsNavigationButtons.add(postWritePostsPostPublicRadioButton);
+        postWritePostsPostPublicRadioButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postWritePostsPostPublicRadioButton.setForeground(new java.awt.Color(51, 255, 255));
+        postWritePostsPostPublicRadioButton.setText("Öffentlich");
+        postWritePostsPostPublicRadioButton.setOpaque(false);
+        postWritePostsPostPublicRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                postWritePostsPostPublicRadioButtonActionPerformed(evt);
+            }
+        });
+        writePostsPanel.add(postWritePostsPostPublicRadioButton);
+        postWritePostsPostPublicRadioButton.setBounds(530, 100, 160, 27);
+
+        postsWritePostsTopicLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsWritePostsTopicLabel.setForeground(new java.awt.Color(0, 153, 153));
+        postsWritePostsTopicLabel.setText("Thema");
+        writePostsPanel.add(postsWritePostsTopicLabel);
+        postsWritePostsTopicLabel.setBounds(40, 140, 100, 25);
+
+        postsWritePostsTopic.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsWritePostsTopic.setForeground(new java.awt.Color(0, 153, 153));
+        writePostsPanel.add(postsWritePostsTopic);
+        postsWritePostsTopic.setBounds(170, 140, 760, 25);
+
+        postsWritePostsTextLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsWritePostsTextLabel.setForeground(new java.awt.Color(0, 153, 153));
+        postsWritePostsTextLabel.setText("Text");
+        writePostsPanel.add(postsWritePostsTextLabel);
+        postsWritePostsTextLabel.setBounds(40, 180, 100, 25);
+
+        postsWritePostsTextScrollPane.setForeground(new java.awt.Color(0, 153, 153));
+
+        postsWritePostsText.setColumns(20);
+        postsWritePostsText.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsWritePostsText.setRows(5);
+        postsWritePostsTextScrollPane.setViewportView(postsWritePostsText);
+
+        writePostsPanel.add(postsWritePostsTextScrollPane);
+        postsWritePostsTextScrollPane.setBounds(170, 180, 760, 390);
+
+        postsWritePostsSendPostButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsWritePostsSendPostButton.setForeground(new java.awt.Color(0, 153, 153));
+        postsWritePostsSendPostButton.setText("Veröffentlichen");
+        postsWritePostsSendPostButton.setEnabled(false);
+        postsWritePostsSendPostButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                postsWritePostsSendPostButtonActionPerformed(evt);
+            }
+        });
+        writePostsPanel.add(postsWritePostsSendPostButton);
+        postsWritePostsSendPostButton.setBounds(750, 580, 180, 27);
+
+        postWritePostsTopicCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/badge_circle_cross_24_ns.png"))); // NOI18N
+        postWritePostsTopicCheck.setText("jLabel5");
+        writePostsPanel.add(postWritePostsTopicCheck);
+        postWritePostsTopicCheck.setBounds(940, 140, 24, 24);
+
+        postWritePostsTextCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/badge_circle_cross_24_ns.png"))); // NOI18N
+        postWritePostsTextCheck.setText("jLabel6");
+        writePostsPanel.add(postWritePostsTextCheck);
+        postWritePostsTextCheck.setBounds(940, 380, 24, 24);
+
+        postsPanel.add(writePostsPanel);
+        writePostsPanel.setBounds(0, 0, 1010, 630);
+
+        readPostsPanel.setOpaque(false);
+        readPostsPanel.setLayout(null);
+
+        postsReadPostsVoteButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsVoteButton.setForeground(new java.awt.Color(0, 153, 153));
+        postsReadPostsVoteButton.setText("Wähle einen Post");
+        postsReadPostsVoteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                postsReadPostsVoteButtonActionPerformed(evt);
+            }
+        });
+        readPostsPanel.add(postsReadPostsVoteButton);
+        postsReadPostsVoteButton.setBounds(30, 580, 380, 27);
+
+        postsReadPostsUsernameLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsUsernameLabel.setForeground(new java.awt.Color(51, 255, 255));
+        postsReadPostsUsernameLabel.setText("Username:");
+        readPostsPanel.add(postsReadPostsUsernameLabel);
+        postsReadPostsUsernameLabel.setBounds(460, 90, 110, 25);
+
+        postsReadPostsUsername.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsUsername.setForeground(new java.awt.Color(0, 153, 153));
+        readPostsPanel.add(postsReadPostsUsername);
+        postsReadPostsUsername.setBounds(590, 90, 280, 25);
+
+        postsReadPostsSearchUsernameButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsSearchUsernameButton.setForeground(new java.awt.Color(0, 153, 153));
+        postsReadPostsSearchUsernameButton.setText("Suche");
+        postsReadPostsSearchUsernameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                postsReadPostsSearchUsernameButtonActionPerformed(evt);
+            }
+        });
+        readPostsPanel.add(postsReadPostsSearchUsernameButton);
+        postsReadPostsSearchUsernameButton.setBounds(880, 90, 100, 23);
+
+        postsReadPostsDateLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsDateLabel.setForeground(new java.awt.Color(51, 255, 255));
+        postsReadPostsDateLabel.setText("Datum");
+        readPostsPanel.add(postsReadPostsDateLabel);
+        postsReadPostsDateLabel.setBounds(460, 130, 110, 25);
+
+        postsReadPostsAutorLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsAutorLabel.setForeground(new java.awt.Color(51, 255, 255));
+        postsReadPostsAutorLabel.setText("Autor");
+        readPostsPanel.add(postsReadPostsAutorLabel);
+        postsReadPostsAutorLabel.setBounds(460, 170, 110, 25);
+
+        postsReadPostsTopicLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsTopicLabel.setForeground(new java.awt.Color(51, 255, 255));
+        postsReadPostsTopicLabel.setText("Thema");
+        readPostsPanel.add(postsReadPostsTopicLabel);
+        postsReadPostsTopicLabel.setBounds(460, 210, 110, 25);
+
+        postsReadPostsTextLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsTextLabel.setForeground(new java.awt.Color(51, 255, 255));
+        postsReadPostsTextLabel.setText("Text");
+        readPostsPanel.add(postsReadPostsTextLabel);
+        postsReadPostsTextLabel.setBounds(460, 250, 110, 25);
+
+        postsReadPostsDate.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsDate.setForeground(new java.awt.Color(51, 255, 255));
+        readPostsPanel.add(postsReadPostsDate);
+        postsReadPostsDate.setBounds(590, 130, 400, 25);
+
+        postsReadPostsAutor.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsAutor.setForeground(new java.awt.Color(51, 255, 255));
+        readPostsPanel.add(postsReadPostsAutor);
+        postsReadPostsAutor.setBounds(590, 170, 400, 25);
+
+        postsReadPostsTopic.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsTopic.setForeground(new java.awt.Color(51, 255, 255));
+        readPostsPanel.add(postsReadPostsTopic);
+        postsReadPostsTopic.setBounds(590, 210, 400, 25);
+
+        postsReadPostsText.setColumns(20);
+        postsReadPostsText.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsReadPostsText.setForeground(new java.awt.Color(0, 153, 153));
+        postsReadPostsText.setRows(5);
+        postsReadPostsTextLabelScrollPane.setViewportView(postsReadPostsText);
+
+        readPostsPanel.add(postsReadPostsTextLabelScrollPane);
+        postsReadPostsTextLabelScrollPane.setBounds(590, 250, 400, 360);
+
+        postsReadPostsAllPosts.setAutoCreateRowSorter(true);
+        postsReadPostsAllPosts.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null,null},
+                {null, null, null,null},
+                {null, null, null,null},
+                {null, null, null,null}
+            },
+            new String [] {
+                "Thema", "Autor", "Datum", "Rating"
+            }
+        ));
+        postsReadPostsAllPosts.setDragEnabled(true);
+        postsReadPostsAllPosts.setOpaque(false);
+        postsReadPostsAllPostsScrollPane.setViewportView(postsReadPostsAllPosts);
+
+        readPostsPanel.add(postsReadPostsAllPostsScrollPane);
+        postsReadPostsAllPostsScrollPane.setBounds(20, 90, 400, 480);
+
+        postsPanel.add(readPostsPanel);
+        readPostsPanel.setBounds(0, 0, 1010, 630);
+
+        editPostsPanel.setOpaque(false);
+        editPostsPanel.setLayout(null);
+
+        postsEditPostsMyPosts.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Thema", "Datum"
+            }
+        ));
+        postsEditPostsMyPostsScrollPane.setViewportView(postsEditPostsMyPosts);
+
+        editPostsPanel.add(postsEditPostsMyPostsScrollPane);
+        postsEditPostsMyPostsScrollPane.setBounds(30, 90, 452, 520);
+
+        postsEditPostsDateLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsEditPostsDateLabel.setForeground(new java.awt.Color(51, 255, 255));
+        postsEditPostsDateLabel.setText("Veröffentlichen als");
+        editPostsPanel.add(postsEditPostsDateLabel);
+        postsEditPostsDateLabel.setBounds(520, 100, 160, 25);
+
+        postsEditPostsTopicLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsEditPostsTopicLabel.setForeground(new java.awt.Color(51, 255, 255));
+        postsEditPostsTopicLabel.setText("Thema");
+        editPostsPanel.add(postsEditPostsTopicLabel);
+        postsEditPostsTopicLabel.setBounds(520, 180, 90, 25);
+
+        postsEditPostsTextLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsEditPostsTextLabel.setForeground(new java.awt.Color(51, 255, 255));
+        postsEditPostsTextLabel.setText("Text");
+        editPostsPanel.add(postsEditPostsTextLabel);
+        postsEditPostsTextLabel.setBounds(520, 220, 90, 25);
+
+        postsEditPostsDate.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsEditPostsDate.setForeground(new java.awt.Color(51, 255, 255));
+        editPostsPanel.add(postsEditPostsDate);
+        postsEditPostsDate.setBounds(620, 140, 340, 25);
+
+        postsEditPostsTopic.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        editPostsPanel.add(postsEditPostsTopic);
+        postsEditPostsTopic.setBounds(620, 180, 340, 25);
+
+        postsEditPostsText.setColumns(20);
+        postsEditPostsText.setRows(5);
+        postsEditPostsTextScrollPane.setViewportView(postsEditPostsText);
+
+        editPostsPanel.add(postsEditPostsTextScrollPane);
+        postsEditPostsTextScrollPane.setBounds(620, 220, 340, 350);
+
+        postsEditPostsDeletePostButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsEditPostsDeletePostButton.setForeground(new java.awt.Color(0, 153, 153));
+        postsEditPostsDeletePostButton.setText("Löschen");
+        postsEditPostsDeletePostButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                postsEditPostsDeletePostButtonActionPerformed(evt);
+            }
+        });
+        editPostsPanel.add(postsEditPostsDeletePostButton);
+        postsEditPostsDeletePostButton.setBounds(630, 580, 130, 27);
+
+        postsEditPostsSendPostButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsEditPostsSendPostButton.setForeground(new java.awt.Color(0, 153, 153));
+        postsEditPostsSendPostButton.setText("Veröffentlichen");
+        postsEditPostsSendPostButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                postsEditPostsSendPostButtonActionPerformed(evt);
+            }
+        });
+        editPostsPanel.add(postsEditPostsSendPostButton);
+        postsEditPostsSendPostButton.setBounds(790, 580, 160, 27);
+
+        postsEditPostsTextCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/badge_circle_cross_24_ns.png"))); // NOI18N
+        postsEditPostsTextCheck.setText("jLabel6");
+        editPostsPanel.add(postsEditPostsTextCheck);
+        postsEditPostsTextCheck.setBounds(970, 380, 24, 24);
+
+        postsEditPostsTopicCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/badge_circle_cross_24_ns.png"))); // NOI18N
+        postsEditPostsTopicCheck.setText("jLabel6");
+        editPostsPanel.add(postsEditPostsTopicCheck);
+        postsEditPostsTopicCheck.setBounds(970, 180, 24, 24);
+
+        editPostsButtonGroup.add(postEditPostsPrivatePostRadioButton);
+        postEditPostsPrivatePostRadioButton.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        postEditPostsPrivatePostRadioButton.setForeground(new java.awt.Color(51, 255, 255));
+        postEditPostsPrivatePostRadioButton.setText("Privat");
+        postEditPostsPrivatePostRadioButton.setOpaque(false);
+        editPostsPanel.add(postEditPostsPrivatePostRadioButton);
+        postEditPostsPrivatePostRadioButton.setBounds(720, 100, 90, 27);
+
+        postsEditPostsDateLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        postsEditPostsDateLabel1.setForeground(new java.awt.Color(51, 255, 255));
+        postsEditPostsDateLabel1.setText("Datum");
+        editPostsPanel.add(postsEditPostsDateLabel1);
+        postsEditPostsDateLabel1.setBounds(520, 140, 90, 25);
+
+        editPostsButtonGroup.add(postEditPostsPubliPostRadioButton);
+        postEditPostsPubliPostRadioButton.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        postEditPostsPubliPostRadioButton.setForeground(new java.awt.Color(51, 255, 255));
+        postEditPostsPubliPostRadioButton.setText("Öffentlich");
+        postEditPostsPubliPostRadioButton.setOpaque(false);
+        editPostsPanel.add(postEditPostsPubliPostRadioButton);
+        postEditPostsPubliPostRadioButton.setBounds(840, 100, 110, 27);
+
+        postsPanel.add(editPostsPanel);
+        editPostsPanel.setBounds(0, 0, 1010, 630);
+
+        getContentPane().add(postsPanel);
+        postsPanel.setBounds(0, 0, 1010, 630);
 
         homePanel.setOpaque(false);
         homePanel.setLayout(null);
@@ -838,10 +1236,22 @@ org.rmi.client.User current;
         jPanel2.add(jScrollPane7);
         jScrollPane7.setBounds(130, 880, 320, 90);
 
+        homeMessageAutorLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homeMessageAutorLabel6.setForeground(new java.awt.Color(0, 153, 153));
+        homeMessageAutorLabel6.setText("Autor:");
+        jPanel2.add(homeMessageAutorLabel6);
+        homeMessageAutorLabel6.setBounds(20, 10, 100, 25);
+
+        homeMessageTopicLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homeMessageTopicLabel6.setForeground(new java.awt.Color(0, 153, 153));
+        homeMessageTopicLabel6.setText("Thema:");
+        jPanel2.add(homeMessageTopicLabel6);
+        homeMessageTopicLabel6.setBounds(140, 10, 100, 25);
+
         jScrollPane2.setViewportView(jPanel2);
 
         homePanel.add(jScrollPane2);
-        jScrollPane2.setBounds(30, 160, 470, 450);
+        jScrollPane2.setBounds(30, 160, 470, 440);
 
         jScrollPane4.setOpaque(false);
         jScrollPane4.getViewport().setOpaque(false);
@@ -849,10 +1259,307 @@ org.rmi.client.User current;
         jPanel4.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel4.setOpaque(false);
         jPanel4.setPreferredSize(new java.awt.Dimension(450, 1000));
+        jPanel4.setLayout(null);
+
+        homePostAutorLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutorLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        homePostAutorLabel1.setText("Autor:");
+        jPanel4.add(homePostAutorLabel1);
+        homePostAutorLabel1.setBounds(20, 10, 100, 25);
+
+        homePostAutor1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutor1.setForeground(new java.awt.Color(51, 255, 255));
+        homePostAutor1.setText("Autor");
+        jPanel4.add(homePostAutor1);
+        homePostAutor1.setBounds(20, 40, 100, 25);
+
+        homePostTopicLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopicLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        homePostTopicLabel1.setText("Thema:");
+        jPanel4.add(homePostTopicLabel1);
+        homePostTopicLabel1.setBounds(140, 10, 100, 25);
+
+        homePostTopic1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopic1.setForeground(new java.awt.Color(51, 255, 255));
+        homePostTopic1.setText("Thema");
+        jPanel4.add(homePostTopic1);
+        homePostTopic1.setBounds(140, 40, 170, 25);
+
+        homePostVotesLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostVotesLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        homePostVotesLabel1.setText("Votes:");
+        jPanel4.add(homePostVotesLabel1);
+        homePostVotesLabel1.setBounds(330, 10, 100, 25);
+
+        homePostVotes1.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
+        homePostVotes1.setForeground(new java.awt.Color(51, 255, 255));
+        homePostVotes1.setText("Votes");
+        jPanel4.add(homePostVotes1);
+        homePostVotes1.setBounds(330, 40, 80, 25);
+
+        homePostText1.setEditable(false);
+        homePostText1.setColumns(18);
+        homePostText1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        homePostText1.setLineWrap(true);
+        homePostText1.setRows(5);
+        homePostText1.setWrapStyleWord(true);
+        jScrollPane8.setViewportView(homePostText1);
+
+        jPanel4.add(jScrollPane8);
+        jScrollPane8.setBounds(130, 80, 320, 90);
+
+        homePostDateLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDateLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        homePostDateLabel1.setText("Datum:");
+        jPanel4.add(homePostDateLabel1);
+        homePostDateLabel1.setBounds(20, 90, 100, 25);
+
+        homePostDate1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDate1.setForeground(new java.awt.Color(51, 255, 255));
+        homePostDate1.setText("Datum");
+        jPanel4.add(homePostDate1);
+        homePostDate1.setBounds(20, 115, 100, 50);
+
+        homePostAutorLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutorLabel2.setForeground(new java.awt.Color(0, 153, 153));
+        homePostAutorLabel2.setText("Autor:");
+        jPanel4.add(homePostAutorLabel2);
+        homePostAutorLabel2.setBounds(20, 210, 100, 25);
+
+        homePostAutor2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutor2.setForeground(new java.awt.Color(51, 255, 255));
+        homePostAutor2.setText("Autor");
+        jPanel4.add(homePostAutor2);
+        homePostAutor2.setBounds(20, 240, 100, 25);
+
+        homePostTopicLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopicLabel2.setForeground(new java.awt.Color(0, 153, 153));
+        homePostTopicLabel2.setText("Thema:");
+        jPanel4.add(homePostTopicLabel2);
+        homePostTopicLabel2.setBounds(140, 210, 100, 25);
+
+        homePostTopic2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopic2.setForeground(new java.awt.Color(51, 255, 255));
+        homePostTopic2.setText("Thema");
+        jPanel4.add(homePostTopic2);
+        homePostTopic2.setBounds(140, 240, 170, 25);
+
+        homePostVotesLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostVotesLabel2.setForeground(new java.awt.Color(0, 153, 153));
+        homePostVotesLabel2.setText("Votes:");
+        jPanel4.add(homePostVotesLabel2);
+        homePostVotesLabel2.setBounds(330, 210, 100, 25);
+
+        homePostVotes2.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
+        homePostVotes2.setForeground(new java.awt.Color(51, 255, 255));
+        homePostVotes2.setText("Votes");
+        jPanel4.add(homePostVotes2);
+        homePostVotes2.setBounds(330, 240, 80, 25);
+
+        homePostText2.setEditable(false);
+        homePostText2.setColumns(18);
+        homePostText2.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        homePostText2.setLineWrap(true);
+        homePostText2.setRows(5);
+        homePostText2.setWrapStyleWord(true);
+        jScrollPane9.setViewportView(homePostText2);
+
+        jPanel4.add(jScrollPane9);
+        jScrollPane9.setBounds(130, 280, 320, 90);
+
+        homePostDateLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDateLabel2.setForeground(new java.awt.Color(0, 153, 153));
+        homePostDateLabel2.setText("Datum:");
+        jPanel4.add(homePostDateLabel2);
+        homePostDateLabel2.setBounds(20, 290, 100, 25);
+
+        homePostDate2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDate2.setForeground(new java.awt.Color(51, 255, 255));
+        homePostDate2.setText("Datum");
+        jPanel4.add(homePostDate2);
+        homePostDate2.setBounds(20, 315, 100, 50);
+
+        homePostAutorLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutorLabel3.setForeground(new java.awt.Color(0, 153, 153));
+        homePostAutorLabel3.setText("Autor:");
+        jPanel4.add(homePostAutorLabel3);
+        homePostAutorLabel3.setBounds(20, 410, 100, 25);
+
+        homePostAutor3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutor3.setForeground(new java.awt.Color(51, 255, 255));
+        homePostAutor3.setText("Autor");
+        jPanel4.add(homePostAutor3);
+        homePostAutor3.setBounds(20, 440, 100, 25);
+
+        homePostDateLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDateLabel3.setForeground(new java.awt.Color(0, 153, 153));
+        homePostDateLabel3.setText("Datum:");
+        jPanel4.add(homePostDateLabel3);
+        homePostDateLabel3.setBounds(20, 490, 100, 25);
+
+        homePostDate3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDate3.setForeground(new java.awt.Color(51, 255, 255));
+        homePostDate3.setText("Datum");
+        jPanel4.add(homePostDate3);
+        homePostDate3.setBounds(20, 515, 100, 50);
+
+        homePostText3.setEditable(false);
+        homePostText3.setColumns(18);
+        homePostText3.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        homePostText3.setLineWrap(true);
+        homePostText3.setRows(5);
+        homePostText3.setWrapStyleWord(true);
+        jScrollPane10.setViewportView(homePostText3);
+
+        jPanel4.add(jScrollPane10);
+        jScrollPane10.setBounds(130, 480, 320, 90);
+
+        homePostTopic3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopic3.setForeground(new java.awt.Color(51, 255, 255));
+        homePostTopic3.setText("Thema");
+        jPanel4.add(homePostTopic3);
+        homePostTopic3.setBounds(140, 440, 170, 25);
+
+        homePostTopicLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopicLabel3.setForeground(new java.awt.Color(0, 153, 153));
+        homePostTopicLabel3.setText("Thema:");
+        jPanel4.add(homePostTopicLabel3);
+        homePostTopicLabel3.setBounds(140, 410, 100, 25);
+
+        homePostVotesLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostVotesLabel3.setForeground(new java.awt.Color(0, 153, 153));
+        homePostVotesLabel3.setText("Votes:");
+        jPanel4.add(homePostVotesLabel3);
+        homePostVotesLabel3.setBounds(330, 410, 100, 25);
+
+        homePostVotes3.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
+        homePostVotes3.setForeground(new java.awt.Color(51, 255, 255));
+        homePostVotes3.setText("Votes");
+        jPanel4.add(homePostVotes3);
+        homePostVotes3.setBounds(330, 440, 80, 25);
+
+        homePostAutorLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutorLabel4.setForeground(new java.awt.Color(0, 153, 153));
+        homePostAutorLabel4.setText("Autor:");
+        jPanel4.add(homePostAutorLabel4);
+        homePostAutorLabel4.setBounds(20, 610, 100, 25);
+
+        homePostAutor4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutor4.setForeground(new java.awt.Color(51, 255, 255));
+        homePostAutor4.setText("Autor");
+        jPanel4.add(homePostAutor4);
+        homePostAutor4.setBounds(20, 640, 100, 25);
+
+        homePostDateLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDateLabel4.setForeground(new java.awt.Color(0, 153, 153));
+        homePostDateLabel4.setText("Datum:");
+        jPanel4.add(homePostDateLabel4);
+        homePostDateLabel4.setBounds(20, 690, 100, 25);
+
+        homePostDate4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDate4.setForeground(new java.awt.Color(51, 255, 255));
+        homePostDate4.setText("Datum");
+        jPanel4.add(homePostDate4);
+        homePostDate4.setBounds(20, 715, 100, 50);
+
+        homePostText4.setEditable(false);
+        homePostText4.setColumns(18);
+        homePostText4.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        homePostText4.setLineWrap(true);
+        homePostText4.setRows(5);
+        homePostText4.setWrapStyleWord(true);
+        jScrollPane11.setViewportView(homePostText4);
+
+        jPanel4.add(jScrollPane11);
+        jScrollPane11.setBounds(130, 680, 320, 90);
+
+        homePostTopic4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopic4.setForeground(new java.awt.Color(51, 255, 255));
+        homePostTopic4.setText("Thema");
+        jPanel4.add(homePostTopic4);
+        homePostTopic4.setBounds(140, 640, 170, 25);
+
+        homePostTopicLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopicLabel4.setForeground(new java.awt.Color(0, 153, 153));
+        homePostTopicLabel4.setText("Thema:");
+        jPanel4.add(homePostTopicLabel4);
+        homePostTopicLabel4.setBounds(140, 610, 100, 25);
+
+        homePostVotesLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostVotesLabel4.setForeground(new java.awt.Color(0, 153, 153));
+        homePostVotesLabel4.setText("Votes:");
+        jPanel4.add(homePostVotesLabel4);
+        homePostVotesLabel4.setBounds(330, 610, 100, 25);
+
+        homePostVotes4.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
+        homePostVotes4.setForeground(new java.awt.Color(51, 255, 255));
+        homePostVotes4.setText("Votes");
+        jPanel4.add(homePostVotes4);
+        homePostVotes4.setBounds(330, 640, 80, 25);
+
+        homePostAutorLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutorLabel5.setForeground(new java.awt.Color(0, 153, 153));
+        homePostAutorLabel5.setText("Autor:");
+        jPanel4.add(homePostAutorLabel5);
+        homePostAutorLabel5.setBounds(20, 810, 100, 25);
+
+        homePostAutor5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostAutor5.setForeground(new java.awt.Color(51, 255, 255));
+        homePostAutor5.setText("Autor");
+        jPanel4.add(homePostAutor5);
+        homePostAutor5.setBounds(20, 840, 100, 25);
+
+        homePostDateLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDateLabel5.setForeground(new java.awt.Color(0, 153, 153));
+        homePostDateLabel5.setText("Datum:");
+        jPanel4.add(homePostDateLabel5);
+        homePostDateLabel5.setBounds(20, 890, 100, 25);
+
+        homePostDate5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostDate5.setForeground(new java.awt.Color(51, 255, 255));
+        homePostDate5.setText("Datum");
+        jPanel4.add(homePostDate5);
+        homePostDate5.setBounds(20, 915, 100, 50);
+
+        homePostText5.setEditable(false);
+        homePostText5.setColumns(18);
+        homePostText5.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        homePostText5.setLineWrap(true);
+        homePostText5.setRows(5);
+        homePostText5.setWrapStyleWord(true);
+        jScrollPane12.setViewportView(homePostText5);
+
+        jPanel4.add(jScrollPane12);
+        jScrollPane12.setBounds(130, 880, 320, 90);
+
+        homePostTopic5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopic5.setForeground(new java.awt.Color(51, 255, 255));
+        homePostTopic5.setText("Thema");
+        jPanel4.add(homePostTopic5);
+        homePostTopic5.setBounds(140, 840, 170, 25);
+
+        homePostTopicLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostTopicLabel5.setForeground(new java.awt.Color(0, 153, 153));
+        homePostTopicLabel5.setText("Thema:");
+        jPanel4.add(homePostTopicLabel5);
+        homePostTopicLabel5.setBounds(140, 810, 100, 25);
+
+        homePostVotesLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        homePostVotesLabel5.setForeground(new java.awt.Color(0, 153, 153));
+        homePostVotesLabel5.setText("Votes:");
+        jPanel4.add(homePostVotesLabel5);
+        homePostVotesLabel5.setBounds(330, 810, 100, 25);
+
+        homePostVotes5.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
+        homePostVotes5.setForeground(new java.awt.Color(51, 255, 255));
+        homePostVotes5.setText("Votes");
+        jPanel4.add(homePostVotes5);
+        homePostVotes5.setBounds(330, 840, 80, 25);
+
         jScrollPane4.setViewportView(jPanel4);
 
         homePanel.add(jScrollPane4);
-        jScrollPane4.setBounds(520, 160, 470, 450);
+        jScrollPane4.setBounds(520, 160, 470, 440);
 
         getContentPane().add(homePanel);
         homePanel.setBounds(0, 0, 1010, 630);
@@ -1114,324 +1821,6 @@ org.rmi.client.User current;
 
         getContentPane().add(messagesPanel);
         messagesPanel.setBounds(0, 0, 1010, 630);
-
-        postsPanel.setOpaque(false);
-        postsPanel.setLayout(null);
-
-        postsButtons.add(writePostsButton);
-        writePostsButton.setFont(new java.awt.Font("Segoe UI Black", 0, 15)); // NOI18N
-        writePostsButton.setForeground(new java.awt.Color(0, 153, 153));
-        writePostsButton.setText("Schreiben");
-        writePostsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                writePostsButtonActionPerformed(evt);
-            }
-        });
-        postsPanel.add(writePostsButton);
-        writePostsButton.setBounds(512, 35, 128, 30);
-
-        postsButtons.add(readPostsButton);
-        readPostsButton.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
-        readPostsButton.setForeground(new java.awt.Color(0, 153, 153));
-        readPostsButton.setText("Lesen");
-        readPostsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                readPostsButtonActionPerformed(evt);
-            }
-        });
-        postsPanel.add(readPostsButton);
-        readPostsButton.setBounds(640, 35, 128, 30);
-
-        postsButtons.add(editPostsButton);
-        editPostsButton.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
-        editPostsButton.setForeground(new java.awt.Color(0, 153, 153));
-        editPostsButton.setText("Bearbeiten");
-        editPostsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editPostsButtonActionPerformed(evt);
-            }
-        });
-        postsPanel.add(editPostsButton);
-        editPostsButton.setBounds(768, 35, 128, 30);
-
-        writePostsPanel.setOpaque(false);
-        writePostsPanel.setLayout(null);
-
-        postsWritePostsTitleLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsWritePostsTitleLabel.setForeground(new java.awt.Color(0, 153, 153));
-        postsWritePostsTitleLabel.setText("Veröffentliche");
-        writePostsPanel.add(postsWritePostsTitleLabel);
-        postsWritePostsTitleLabel.setBounds(40, 100, 120, 25);
-
-        writePostsNavigationButtons.add(postWritePostsPostPrivateRadioButton);
-        postWritePostsPostPrivateRadioButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postWritePostsPostPrivateRadioButton.setForeground(new java.awt.Color(51, 255, 255));
-        postWritePostsPostPrivateRadioButton.setSelected(true);
-        postWritePostsPostPrivateRadioButton.setText("Privat");
-        postWritePostsPostPrivateRadioButton.setOpaque(false);
-        writePostsPanel.add(postWritePostsPostPrivateRadioButton);
-        postWritePostsPostPrivateRadioButton.setBounds(370, 100, 160, 27);
-
-        writePostsNavigationButtons.add(postWritePostsPostPublicRadioButton);
-        postWritePostsPostPublicRadioButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postWritePostsPostPublicRadioButton.setForeground(new java.awt.Color(51, 255, 255));
-        postWritePostsPostPublicRadioButton.setText("Öffentlich");
-        postWritePostsPostPublicRadioButton.setOpaque(false);
-        postWritePostsPostPublicRadioButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                postWritePostsPostPublicRadioButtonActionPerformed(evt);
-            }
-        });
-        writePostsPanel.add(postWritePostsPostPublicRadioButton);
-        postWritePostsPostPublicRadioButton.setBounds(530, 100, 160, 27);
-
-        postsWritePostsTopicLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsWritePostsTopicLabel.setForeground(new java.awt.Color(0, 153, 153));
-        postsWritePostsTopicLabel.setText("Thema");
-        writePostsPanel.add(postsWritePostsTopicLabel);
-        postsWritePostsTopicLabel.setBounds(40, 140, 100, 25);
-
-        postsWritePostsTopic.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsWritePostsTopic.setForeground(new java.awt.Color(0, 153, 153));
-        writePostsPanel.add(postsWritePostsTopic);
-        postsWritePostsTopic.setBounds(170, 140, 760, 25);
-
-        postsWritePostsTextLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsWritePostsTextLabel.setForeground(new java.awt.Color(0, 153, 153));
-        postsWritePostsTextLabel.setText("Text");
-        writePostsPanel.add(postsWritePostsTextLabel);
-        postsWritePostsTextLabel.setBounds(40, 180, 100, 25);
-
-        postsWritePostsTextScrollPane.setForeground(new java.awt.Color(0, 153, 153));
-
-        postsWritePostsText.setColumns(20);
-        postsWritePostsText.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsWritePostsText.setRows(5);
-        postsWritePostsTextScrollPane.setViewportView(postsWritePostsText);
-
-        writePostsPanel.add(postsWritePostsTextScrollPane);
-        postsWritePostsTextScrollPane.setBounds(170, 180, 760, 390);
-
-        postsWritePostsSendPostButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsWritePostsSendPostButton.setForeground(new java.awt.Color(0, 153, 153));
-        postsWritePostsSendPostButton.setText("Veröffentlichen");
-        postsWritePostsSendPostButton.setEnabled(false);
-        postsWritePostsSendPostButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                postsWritePostsSendPostButtonActionPerformed(evt);
-            }
-        });
-        writePostsPanel.add(postsWritePostsSendPostButton);
-        postsWritePostsSendPostButton.setBounds(750, 580, 180, 27);
-
-        postWritePostsTopicCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/badge_circle_cross_24_ns.png"))); // NOI18N
-        postWritePostsTopicCheck.setText("jLabel5");
-        writePostsPanel.add(postWritePostsTopicCheck);
-        postWritePostsTopicCheck.setBounds(940, 140, 24, 24);
-
-        postWritePostsTextCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/badge_circle_cross_24_ns.png"))); // NOI18N
-        postWritePostsTextCheck.setText("jLabel6");
-        writePostsPanel.add(postWritePostsTextCheck);
-        postWritePostsTextCheck.setBounds(940, 380, 24, 24);
-
-        postsPanel.add(writePostsPanel);
-        writePostsPanel.setBounds(0, 0, 1010, 630);
-
-        readPostsPanel.setOpaque(false);
-        readPostsPanel.setLayout(null);
-
-        postsReadPostsVoteButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsVoteButton.setForeground(new java.awt.Color(0, 153, 153));
-        postsReadPostsVoteButton.setText("Vote / Unvote");
-        readPostsPanel.add(postsReadPostsVoteButton);
-        postsReadPostsVoteButton.setBounds(30, 580, 380, 27);
-
-        postsReadPostsUsernameLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsUsernameLabel.setForeground(new java.awt.Color(51, 255, 255));
-        postsReadPostsUsernameLabel.setText("Username:");
-        readPostsPanel.add(postsReadPostsUsernameLabel);
-        postsReadPostsUsernameLabel.setBounds(460, 90, 110, 25);
-
-        postsReadPostsUsername.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsUsername.setForeground(new java.awt.Color(0, 153, 153));
-        readPostsPanel.add(postsReadPostsUsername);
-        postsReadPostsUsername.setBounds(590, 90, 280, 25);
-
-        postsReadPostsSearchUsernameButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsSearchUsernameButton.setForeground(new java.awt.Color(0, 153, 153));
-        postsReadPostsSearchUsernameButton.setText("Suche");
-        postsReadPostsSearchUsernameButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                postsReadPostsSearchUsernameButtonActionPerformed(evt);
-            }
-        });
-        readPostsPanel.add(postsReadPostsSearchUsernameButton);
-        postsReadPostsSearchUsernameButton.setBounds(880, 90, 100, 23);
-
-        postsReadPostsDateLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsDateLabel.setForeground(new java.awt.Color(51, 255, 255));
-        postsReadPostsDateLabel.setText("Datum");
-        readPostsPanel.add(postsReadPostsDateLabel);
-        postsReadPostsDateLabel.setBounds(460, 130, 110, 25);
-
-        postsReadPostsAutorLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsAutorLabel.setForeground(new java.awt.Color(51, 255, 255));
-        postsReadPostsAutorLabel.setText("Autor");
-        readPostsPanel.add(postsReadPostsAutorLabel);
-        postsReadPostsAutorLabel.setBounds(460, 170, 110, 25);
-
-        postsReadPostsTopicLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsTopicLabel.setForeground(new java.awt.Color(51, 255, 255));
-        postsReadPostsTopicLabel.setText("Thema");
-        readPostsPanel.add(postsReadPostsTopicLabel);
-        postsReadPostsTopicLabel.setBounds(460, 210, 110, 25);
-
-        postsReadPostsTextLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsTextLabel.setForeground(new java.awt.Color(51, 255, 255));
-        postsReadPostsTextLabel.setText("Text");
-        readPostsPanel.add(postsReadPostsTextLabel);
-        postsReadPostsTextLabel.setBounds(460, 250, 110, 25);
-
-        postsReadPostsDate.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsDate.setForeground(new java.awt.Color(51, 255, 255));
-        readPostsPanel.add(postsReadPostsDate);
-        postsReadPostsDate.setBounds(590, 130, 400, 25);
-
-        postsReadPostsAutor.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsAutor.setForeground(new java.awt.Color(51, 255, 255));
-        readPostsPanel.add(postsReadPostsAutor);
-        postsReadPostsAutor.setBounds(590, 170, 400, 25);
-
-        postsReadPostsTopic.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsTopic.setForeground(new java.awt.Color(51, 255, 255));
-        readPostsPanel.add(postsReadPostsTopic);
-        postsReadPostsTopic.setBounds(590, 210, 400, 25);
-
-        postsReadPostsText.setColumns(20);
-        postsReadPostsText.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsReadPostsText.setForeground(new java.awt.Color(0, 153, 153));
-        postsReadPostsText.setRows(5);
-        postsReadPostsTextLabelScrollPane.setViewportView(postsReadPostsText);
-
-        readPostsPanel.add(postsReadPostsTextLabelScrollPane);
-        postsReadPostsTextLabelScrollPane.setBounds(590, 250, 400, 360);
-
-        postsReadPostsAllPosts.setAutoCreateRowSorter(true);
-        postsReadPostsAllPosts.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null,null},
-                {null, null, null,null},
-                {null, null, null,null},
-                {null, null, null,null}
-            },
-            new String [] {
-                "Thema", "Autor", "Datum", "Rating"
-            }
-        ));
-        postsReadPostsAllPosts.setDragEnabled(true);
-        postsReadPostsAllPosts.setOpaque(false);
-        postsReadPostsAllPostsScrollPane.setViewportView(postsReadPostsAllPosts);
-
-        readPostsPanel.add(postsReadPostsAllPostsScrollPane);
-        postsReadPostsAllPostsScrollPane.setBounds(20, 90, 400, 480);
-
-        postsPanel.add(readPostsPanel);
-        readPostsPanel.setBounds(0, 0, 1010, 630);
-
-        editPostsPanel.setOpaque(false);
-        editPostsPanel.setLayout(null);
-
-        postsEditPostsMyPosts.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Thema", "Datum"
-            }
-        ));
-        postsEditPostsMyPostsScrollPane.setViewportView(postsEditPostsMyPosts);
-
-        editPostsPanel.add(postsEditPostsMyPostsScrollPane);
-        postsEditPostsMyPostsScrollPane.setBounds(30, 90, 452, 520);
-
-        postsEditPostsDateLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsEditPostsDateLabel.setForeground(new java.awt.Color(51, 255, 255));
-        postsEditPostsDateLabel.setText("Datum");
-        editPostsPanel.add(postsEditPostsDateLabel);
-        postsEditPostsDateLabel.setBounds(520, 100, 90, 25);
-
-        postsEditPostsTopicLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsEditPostsTopicLabel.setForeground(new java.awt.Color(51, 255, 255));
-        postsEditPostsTopicLabel.setText("Thema");
-        editPostsPanel.add(postsEditPostsTopicLabel);
-        postsEditPostsTopicLabel.setBounds(520, 140, 90, 25);
-
-        postsEditPostsTextLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsEditPostsTextLabel.setForeground(new java.awt.Color(51, 255, 255));
-        postsEditPostsTextLabel.setText("Text");
-        editPostsPanel.add(postsEditPostsTextLabel);
-        postsEditPostsTextLabel.setBounds(520, 180, 90, 25);
-
-        postsEditPostsDate.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsEditPostsDate.setForeground(new java.awt.Color(51, 255, 255));
-        editPostsPanel.add(postsEditPostsDate);
-        postsEditPostsDate.setBounds(620, 100, 340, 25);
-
-        postsEditPostsTopic.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        editPostsPanel.add(postsEditPostsTopic);
-        postsEditPostsTopic.setBounds(620, 140, 340, 25);
-
-        postsEditPostsText.setColumns(20);
-        postsEditPostsText.setRows(5);
-        postsEditPostsTextScrollPane.setViewportView(postsEditPostsText);
-
-        editPostsPanel.add(postsEditPostsTextScrollPane);
-        postsEditPostsTextScrollPane.setBounds(620, 190, 340, 380);
-
-        postsEditPostsDeletePostButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsEditPostsDeletePostButton.setForeground(new java.awt.Color(0, 153, 153));
-        postsEditPostsDeletePostButton.setText("Löschen");
-        postsEditPostsDeletePostButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                postsEditPostsDeletePostButtonActionPerformed(evt);
-            }
-        });
-        editPostsPanel.add(postsEditPostsDeletePostButton);
-        postsEditPostsDeletePostButton.setBounds(640, 580, 130, 27);
-
-        postsEditPostsSendPostButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        postsEditPostsSendPostButton.setForeground(new java.awt.Color(0, 153, 153));
-        postsEditPostsSendPostButton.setText("Veröffentlichen");
-        postsEditPostsSendPostButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                postsEditPostsSendPostButtonActionPerformed(evt);
-            }
-        });
-        editPostsPanel.add(postsEditPostsSendPostButton);
-        postsEditPostsSendPostButton.setBounds(780, 580, 160, 27);
-
-        postsEditPostsTextCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/badge_circle_cross_24_ns.png"))); // NOI18N
-        postsEditPostsTextCheck.setText("jLabel6");
-        editPostsPanel.add(postsEditPostsTextCheck);
-        postsEditPostsTextCheck.setBounds(970, 380, 24, 24);
-
-        postsEditPostsTopicCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/badge_circle_cross_24_ns.png"))); // NOI18N
-        postsEditPostsTopicCheck.setText("jLabel6");
-        editPostsPanel.add(postsEditPostsTopicCheck);
-        postsEditPostsTopicCheck.setBounds(970, 140, 24, 24);
-
-        postsPanel.add(editPostsPanel);
-        editPostsPanel.setBounds(0, 0, 1010, 630);
-
-        getContentPane().add(postsPanel);
-        postsPanel.setBounds(0, 0, 1010, 630);
-
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/Symbol-Pi-HD-Wallpaper-Background-1024x640.jpg"))); // NOI18N
-        getContentPane().add(background);
-        background.setBounds(0, -10, 1030, 650);
 
         usersPanel.setOpaque(false);
         usersPanel.setLayout(null);
@@ -2455,6 +2844,10 @@ org.rmi.client.User current;
         getContentPane().add(statsPanel);
         statsPanel.setBounds(0, 0, 1010, 630);
 
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/Symbol-Pi-HD-Wallpaper-Background-1024x640.jpg"))); // NOI18N
+        getContentPane().add(background);
+        background.setBounds(0, -10, 1030, 650);
+
         defaultModelPanel.setOpaque(false);
         defaultModelPanel.setLayout(null);
         getContentPane().add(defaultModelPanel);
@@ -2477,6 +2870,8 @@ org.rmi.client.User current;
         postsPanel.setVisible(false);
         statsPanel.setVisible(false);
         topFiveMessagesFillValues();
+        topFivePostFillValues();
+        System.out.println("Da bin isch :D");
     }//GEN-LAST:event_homeButtonActionPerformed
 
     private void myProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myProfileButtonActionPerformed
@@ -3122,7 +3517,13 @@ org.rmi.client.User current;
         editPostsPanel.setVisible(false);
         postsReadPostsAllPosts.clearSelection();
         postsReadPostsAllPosts.setModel(allPostsModel);
-        //set values from server function
+        try {
+            allPostsModel.resetDataTo(current.server.viewPosts(current.sessionID));
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (RemoteException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_readPostsButtonActionPerformed
 
     private void editPostsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editPostsButtonActionPerformed
@@ -3130,8 +3531,14 @@ org.rmi.client.User current;
         writePostsPanel.setVisible(false);
         editPostsPanel.setVisible(true);
         postsEditPostsMyPosts.clearSelection();
-        postsEditPostsMyPosts.setModel(allPostsModel);
-        //set values from server function
+        postsEditPostsMyPosts.setModel(myPostsModel);
+        try {
+            myPostsModel.resetDataTo(current.server.viewEditablePosts(current.sessionID));
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (RemoteException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_editPostsButtonActionPerformed
 
     private void messagesSendMessagesDeleteAdresseeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesSendMessagesDeleteAdresseeButtonActionPerformed
@@ -3216,10 +3623,10 @@ org.rmi.client.User current;
 
     private void messagesReadMessagesDeleteMessageButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messagesReadMessagesDeleteMessageButton1ActionPerformed
         try {
-        current.server.deleteNews(current.sessionID, Integer.parseInt((String)(allMessagesModel.getValueAt(messagesReadMesagesAllMessages.getSelectedRow(), 5))));
-        JOptionPane.showMessageDialog(rootPane, "Nachricht wurde erfolgreich gelöscht");
-        messagesReadMesagesAllMessages.clearSelection();
-        allMessagesModel.resetDataTo(current.server.getAllNews(current.sessionID, "asc"));
+            current.server.deleteNews(current.sessionID, Integer.parseInt((String)(allMessagesModel.getValueAt(messagesReadMesagesAllMessages.getSelectedRow(), 5))));
+            JOptionPane.showMessageDialog(rootPane, "Nachricht wurde erfolgreich gelöscht");
+            messagesReadMesagesAllMessages.clearSelection();
+            allMessagesModel.resetDataTo(current.server.getAllNews(current.sessionID, "asc"));
         } catch (RemoteException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3227,31 +3634,104 @@ org.rmi.client.User current;
 
     private void postsReadPostsSearchUsernameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postsReadPostsSearchUsernameButtonActionPerformed
         postsReadPostsAllPosts.clearSelection();
-        //allPostsModel.resetDataTo(suche Post nach Username mit postsReadPostsUsername.getText(), current.sessionID))
+        try {
+            String search = postsReadPostsUsername.getText();
+            if (search.equals("")){
+                allPostsModel.resetDataTo(current.server.viewPosts(current.sessionID));
+            }else{
+                allPostsModel.resetDataTo(current.server.viewSearchPostResult(current.sessionID, postsReadPostsUsername.getText()));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (RemoteException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_postsReadPostsSearchUsernameButtonActionPerformed
 
     private void postsEditPostsDeletePostButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postsEditPostsDeletePostButtonActionPerformed
-        // current.server.deletePost(current.sessionID, myPostsModel.getValueAt(postsEditPostsMyPosts.getSelectedRow(),5));
-        postsEditPostsMyPosts.clearSelection();
-        // myPostsModel.resetData()
+        try {
+            current.server.deletePost(current.sessionID, Integer.parseInt( (String) myPostsModel.getValueAt(postsEditPostsMyPosts.getSelectedRow(),3)));
+            postsEditPostsMyPosts.clearSelection();
+            myPostsModel.resetDataTo(current.server.viewEditablePosts(current.sessionID));
+            JOptionPane.showMessageDialog(rootPane, "Post wurde erfolgreich gelöscht");
+            postsEditPostsDate.setText("");
+            postsEditPostsTopic.setText("");
+            postsEditPostsText.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (RemoteException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_postsEditPostsDeletePostButtonActionPerformed
 
     private void postsEditPostsSendPostButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postsEditPostsSendPostButtonActionPerformed
-        // TODO add your handling code here:
+        try {
+            int postID = Integer.parseInt( (String) myPostsModel.getValueAt(postsEditPostsMyPosts.getSelectedRow(),3));
+            current.server.editPost(current.sessionID, postID, postsEditPostsTopic.getText(), postsEditPostsText.getText());
+            if (postEditPostsPrivatePostRadioButton.isSelected()){
+                current.server.editPublicity(current.sessionID, postID, 0);
+            } else {
+                current.server.editPublicity(current.sessionID, postID, 1);
+            }
+            postsEditPostsMyPosts.clearSelection();
+            myPostsModel.resetDataTo(current.server.viewEditablePosts(current.sessionID));
+            JOptionPane.showMessageDialog(rootPane, "Post wurde erfolgreich geändert");
+            postsEditPostsDate.setText("");
+            postsEditPostsTopic.setText("");
+            postsEditPostsText.setText("");
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (RemoteException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_postsEditPostsSendPostButtonActionPerformed
 
     private void postsWritePostsSendPostButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postsWritePostsSendPostButtonActionPerformed
         if (postWritePostsPostPrivateRadioButton.isSelected()){
-            //current.server.postPrivatePost(current.sessionId);
-            postsWritePostsTopic.setText("");
-            postsWritePostsText.setText("");
+            try {
+                current.server.submitPost(current.sessionID, postsWritePostsTopic.getText(), postsWritePostsText.getText(), 0);
+                postsWritePostsTopic.setText("");
+                postsWritePostsText.setText("");
+                JOptionPane.showMessageDialog(rootPane, "Posts wurde erfolgrreich veröffentlicht");
+            } catch (SQLException ex) {
+                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (RemoteException ex) {
+                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }else{
-            //current.server.postPublicPost(current.sessionId);
-            postsWritePostsTopic.setText("");
-            postsWritePostsText.setText("");
+            try {
+                current.server.submitPost(current.sessionID, postsWritePostsTopic.getText(), postsWritePostsText.getText(), 1);
+                postsWritePostsTopic.setText("");
+                postsWritePostsText.setText("");
+                JOptionPane.showMessageDialog(rootPane, "Posts wurde erfolgrreich veröffentlicht");
+            } catch (SQLException ex) {
+                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (RemoteException ex) {
+                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        JOptionPane.showMessageDialog(rootPane, "Posts wurde erfolgrreich veröffentlicht");
     }//GEN-LAST:event_postsWritePostsSendPostButtonActionPerformed
+
+    private void postsReadPostsVoteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postsReadPostsVoteButtonActionPerformed
+        Boolean voted = false;
+        int postID = Integer.parseInt((String)allPostsModel.getValueAt(postsReadPostsAllPosts.getSelectedRow(), 5));
+        try {
+            voted = current.server.isVoted(current.sessionID, postID);
+            if(voted){
+                current.server.unvotePost(current.sessionID, postID);
+            }else{
+                current.server.votePost(current.sessionID, postID);
+            }
+            postsReadPostsAllPosts.clearSelection();
+            allPostsModel.resetDataTo(current.server.viewPosts(current.sessionID));
+            postsReadPostsVoteButton.setText("Wähle einen Post");
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (RemoteException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }//GEN-LAST:event_postsReadPostsVoteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3316,6 +3796,7 @@ org.rmi.client.User current;
     private javax.swing.JLabel changePasswordTitleLabel;
     private javax.swing.JPanel defaultModelPanel;
     private javax.swing.JToggleButton editPostsButton;
+    private javax.swing.ButtonGroup editPostsButtonGroup;
     private javax.swing.JPanel editPostsPanel;
     private javax.swing.ButtonGroup findFriendsOrderButtons;
     private javax.swing.ButtonGroup groupButtons;
@@ -3332,6 +3813,7 @@ org.rmi.client.User current;
     private javax.swing.JLabel homeMessageAutorLabel3;
     private javax.swing.JLabel homeMessageAutorLabel4;
     private javax.swing.JLabel homeMessageAutorLabel5;
+    private javax.swing.JLabel homeMessageAutorLabel6;
     private javax.swing.JLabel homeMessageDate1;
     private javax.swing.JLabel homeMessageDate2;
     private javax.swing.JLabel homeMessageDate3;
@@ -3367,19 +3849,70 @@ org.rmi.client.User current;
     private javax.swing.JLabel homeMessageTopicLabel3;
     private javax.swing.JLabel homeMessageTopicLabel4;
     private javax.swing.JLabel homeMessageTopicLabel5;
+    private javax.swing.JLabel homeMessageTopicLabel6;
     private javax.swing.JPanel homePanel;
+    private javax.swing.JLabel homePostAutor1;
+    private javax.swing.JLabel homePostAutor2;
+    private javax.swing.JLabel homePostAutor3;
+    private javax.swing.JLabel homePostAutor4;
+    private javax.swing.JLabel homePostAutor5;
+    private javax.swing.JLabel homePostAutorLabel1;
+    private javax.swing.JLabel homePostAutorLabel2;
+    private javax.swing.JLabel homePostAutorLabel3;
+    private javax.swing.JLabel homePostAutorLabel4;
+    private javax.swing.JLabel homePostAutorLabel5;
+    private javax.swing.JLabel homePostDate1;
+    private javax.swing.JLabel homePostDate2;
+    private javax.swing.JLabel homePostDate3;
+    private javax.swing.JLabel homePostDate4;
+    private javax.swing.JLabel homePostDate5;
+    private javax.swing.JLabel homePostDateLabel1;
+    private javax.swing.JLabel homePostDateLabel2;
+    private javax.swing.JLabel homePostDateLabel3;
+    private javax.swing.JLabel homePostDateLabel4;
+    private javax.swing.JLabel homePostDateLabel5;
+    private javax.swing.JTextArea homePostText1;
+    private javax.swing.JTextArea homePostText2;
+    private javax.swing.JTextArea homePostText3;
+    private javax.swing.JTextArea homePostText4;
+    private javax.swing.JTextArea homePostText5;
+    private javax.swing.JLabel homePostTopic1;
+    private javax.swing.JLabel homePostTopic2;
+    private javax.swing.JLabel homePostTopic3;
+    private javax.swing.JLabel homePostTopic4;
+    private javax.swing.JLabel homePostTopic5;
+    private javax.swing.JLabel homePostTopicLabel1;
+    private javax.swing.JLabel homePostTopicLabel2;
+    private javax.swing.JLabel homePostTopicLabel3;
+    private javax.swing.JLabel homePostTopicLabel4;
+    private javax.swing.JLabel homePostTopicLabel5;
+    private javax.swing.JLabel homePostVotes1;
+    private javax.swing.JLabel homePostVotes2;
+    private javax.swing.JLabel homePostVotes3;
+    private javax.swing.JLabel homePostVotes4;
+    private javax.swing.JLabel homePostVotes5;
+    private javax.swing.JLabel homePostVotesLabel1;
+    private javax.swing.JLabel homePostVotesLabel2;
+    private javax.swing.JLabel homePostVotesLabel3;
+    private javax.swing.JLabel homePostVotesLabel4;
+    private javax.swing.JLabel homePostVotesLabel5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JToggleButton logOutButton;
     private javax.swing.ButtonGroup menuBar;
     private javax.swing.JToggleButton messagesButton;
@@ -3489,6 +4022,8 @@ org.rmi.client.User current;
     private javax.swing.JPanel newGroupPanel;
     private javax.swing.JLabel newGroupTitleLabel;
     private javax.swing.JToggleButton newGroupsButton;
+    private javax.swing.JRadioButton postEditPostsPrivatePostRadioButton;
+    private javax.swing.JRadioButton postEditPostsPubliPostRadioButton;
     private javax.swing.JRadioButton postWritePostsPostPrivateRadioButton;
     private javax.swing.JRadioButton postWritePostsPostPublicRadioButton;
     private javax.swing.JLabel postWritePostsTextCheck;
@@ -3497,6 +4032,7 @@ org.rmi.client.User current;
     private javax.swing.ButtonGroup postsButtons;
     private javax.swing.JLabel postsEditPostsDate;
     private javax.swing.JLabel postsEditPostsDateLabel;
+    private javax.swing.JLabel postsEditPostsDateLabel1;
     private javax.swing.JButton postsEditPostsDeletePostButton;
     private javax.swing.JTable postsEditPostsMyPosts;
     private javax.swing.JScrollPane postsEditPostsMyPostsScrollPane;
@@ -4180,12 +4716,20 @@ public class EditPostsTableModel extends MyTableModel {
                     postsReadPostsAutor.setText((String) allPostsModel.getValueAt(postsReadPostsAllPosts.getSelectedRow(),1));
                     postsReadPostsDate.setText((String) allPostsModel.getValueAt(postsReadPostsAllPosts.getSelectedRow(),2));
                     postsReadPostsText.setText((String) allPostsModel.getValueAt(postsReadPostsAllPosts.getSelectedRow(),4));
-                    /*if (allPostsModel.getValueAt(postsReadPostsAllPosts.getSelectedRow(),5){
+                    Boolean voted = false;
+                    String postID = (String)allPostsModel.getValueAt(postsReadPostsAllPosts.getSelectedRow(), 5);
+                    try {
+                        voted = current.server.isVoted(current.sessionID, Integer.parseInt(postID));
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (RemoteException ex) {
+                        Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    if(voted){
                         postsReadPostsVoteButton.setText("Unvote");
                     }else{
                         postsReadPostsVoteButton.setText("Vote");
                     }
-                    */
                 }
             }
         });
@@ -4230,12 +4774,20 @@ public class EditPostsTableModel extends MyTableModel {
                     postsEditPostsTopic.setText((String) myPostsModel.getValueAt(postsEditPostsMyPosts.getSelectedRow(),0));
                     postsEditPostsDate.setText((String) myPostsModel.getValueAt(postsEditPostsMyPosts.getSelectedRow(),1));
                     postsEditPostsText.setText((String) myPostsModel.getValueAt(postsEditPostsMyPosts.getSelectedRow(),2));
-                    /*if (myPostsModel.getValueAt(postsEditPostsMyPosts.getSelectedRow(),3){
-                        postsReadPostsVoteButton.setText("Unvote");
-                    }else{
-                        postsReadPostsVoteButton.setText("Vote");
+                    int postID = Integer.parseInt((String) myPostsModel.getValueAt(postsEditPostsMyPosts.getSelectedRow(), 3));
+                    try {
+                        ArrayList<String> currentPost = current.server.getSelectedPost(current.sessionID, postID);
+                        String status = currentPost.get(5);
+                        if (status.equals("0")){
+                            postEditPostsPrivatePostRadioButton.setSelected(true);                            
+                        } else {
+                            postEditPostsPubliPostRadioButton.setSelected(true); 
+                        }
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (RemoteException ex) {
+                        Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    */
                 }
             }
         });
@@ -4325,5 +4877,86 @@ public class EditPostsTableModel extends MyTableModel {
             return "Nicht gelesen";
         }
         return "Gelesen";
+    }
+    
+     private void topFivePostFillValues() {        
+        try {
+            DefaultListModel <String[]> posts = current.server.viewPosts(current.sessionID);
+            String[] current_post;
+            if (posts.size() >= 1){
+                current_post = posts.get(0);
+                homePostAutor1.setText(current_post[1]);
+                homePostTopic1.setText(current_post[0]);
+                homePostDate1.setText("<html><body>" + current_post[2] + "</body></html>");
+                homePostVotes1.setText(current_post[3]);
+                homePostText1.setText(current_post[4]);
+            }else{
+                homePostAutor1.setText("");
+                homePostTopic1.setText("");
+                homePostDate1.setText("");
+                homePostVotes1.setText("");
+                homePostText1.setText("");
+            }
+            if (posts.size() >= 2){
+                current_post = posts.get(1);
+                homePostAutor2.setText(current_post[1]);
+                homePostTopic2.setText(current_post[0]);
+                homePostDate2.setText("<html><body>" + current_post[2] + "</body></html>");
+                homePostVotes2.setText(current_post[3]);
+                homePostText2.setText(current_post[4]);
+            }else{
+                homePostAutor2.setText("");
+                homePostTopic2.setText("");
+                homePostDate2.setText("");
+                homePostVotes2.setText("");
+                homePostText2.setText("");
+            }
+            if (posts.size() >= 3){
+                current_post = posts.get(2);
+                homePostAutor3.setText(current_post[1]);
+                homePostTopic3.setText(current_post[0]);
+                homePostDate3.setText("<html><body>" + current_post[2] + "</body></html>");
+                homePostVotes3.setText(current_post[3]);
+                homePostText3.setText(current_post[4]);
+            }else{
+                homePostAutor3.setText("");
+                homePostTopic3.setText("");
+                homePostDate3.setText("");
+                homePostVotes3.setText("");
+                homePostText3.setText("");
+            }
+            if (posts.size() >= 4){
+                current_post = posts.get(3);
+                homePostAutor4.setText(current_post[1]);
+                homePostTopic4.setText(current_post[0]);
+                homePostDate4.setText("<html><body>" + current_post[2] + "</body></html>");
+                homePostVotes4.setText(current_post[3]);
+                homePostText4.setText(current_post[4]);
+            }else{
+                homePostAutor4.setText("");
+                homePostTopic4.setText("");
+                homePostDate4.setText("");
+                homePostVotes4.setText("");
+                homePostText4.setText("");
+            }
+            if (posts.size() >= 5){
+                current_post = posts.get(4);
+                homePostAutor5.setText(current_post[1]);
+                homePostTopic5.setText(current_post[0]);
+                homePostDate5.setText("<html><body>" + current_post[2] + "</body></html>");
+                homePostVotes5.setText(current_post[3]);
+                homePostText5.setText(current_post[4]);
+            }else{
+                homePostAutor5.setText("");
+                homePostTopic5.setText("");
+                homePostDate5.setText("");
+                homePostVotes5.setText("");
+                homePostText5.setText("");
+            }
+        } catch (RemoteException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+        Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }
 }
